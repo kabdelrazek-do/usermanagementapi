@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "user-management-api-collection",
+		"name": "User Management API",
+		"description": "Complete collection for testing the User Management API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Retrieve all active users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				},
+				"description": "Retrieve a specific user by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users by Department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users/department/IT",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"department",
+						"IT"
+					]
+				},
+				"description": "Retrieve all users in a specific department"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by Email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users/email/john.doe@techhive.com",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"email",
+						"john.doe@techhive.com"
+					]
+				},
+				"description": "Retrieve a user by email address"
+			},
+			"response": []
+		},
+		{
+			"name": "Create New User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Johnson\",\n  \"email\": \"alice.johnson@techhive.com\",\n  \"phoneNumber\": \"555-0104\",\n  \"department\": \"Marketing\",\n  \"position\": \"Marketing Specialist\",\n  \"hireDate\": \"2024-01-15T00:00:00\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Create a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"department\": \"Engineering\",\n  \"position\": \"Senior Developer\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/users/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				},
+				"description": "Update an existing user"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/users/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				},
+				"description": "Soft delete a user (marks as inactive)"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
